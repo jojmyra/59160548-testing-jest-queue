@@ -66,3 +66,30 @@ test('tail should be 0', () => {
     expect(queue.tail).toBe(0)
     
 })
+
+test('head should be 1', () => {
+    const queue = new Queue(2)
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.dequeue()
+    queue.dequeue()
+    queue.dequeue()
+    queue.enqueue(1)
+    expect(queue.head).toBe(0)
+    expect(queue.tail).toBe(1)
+    
+})
+test('head & tail should be 1', () => {
+    const queue = new Queue(2)
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.dequeue()
+    queue.dequeue()
+    queue.dequeue()
+    queue.enqueue(1)
+    queue.dequeue(1)
+    expect(queue.head).toBe(1)
+    expect(queue.tail).toBe(1)
+})
